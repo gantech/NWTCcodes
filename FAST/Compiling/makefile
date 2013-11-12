@@ -16,8 +16,8 @@
 #================================================================================#
 
    # 32-bit or 64-bit?
-BITS = 32
-#BITS = 64
+#BITS = 32
+BITS = 64
 
 
    # Location of source files for FAST, AeroDyn, InflowWind, and the NWTC Library.
@@ -30,11 +30,10 @@ ifeq ($(OS),Windows_NT)
    WIND_DIR    = C:/Users/bjonkman/Documents/DATA/DesignCodes/simulators/InflowWind/SVNdirectory/trunk/Source
    FAST_DIR    = C:/Users/bjonkman/Documents/DATA/DesignCodes/simulators/FAST/SVNdirectory/trunk/Source
 else
-   NWTC_LIB_DIR = $(HOME)/PC/CAEtools/Miscellaneous/NWTC_Library/trunk/source
-   AERODYN_DIR  = $(HOME)/PC/CAEtools/simulators/AeroDyn/SVNdirectory/trunk/Source
-   WIND_DIR     = $(HOME)/PC/CAEtools/simulators/InflowWind/SVNdirectory/trunk/Source
-   FAST_DIR     = $(HOME)/PC/CAEtools/simulators/FAST/SVNdirectory/trunk/Source
-
+   NWTC_LIB_DIR = /work/02504/ganesh10/NWTCcodes/NWTC_Lib/source
+   AERODYN_DIR  = /work/02504/ganesh10/NWTCcodes/AeroDyn/Source
+   WIND_DIR     = /work/02504/ganesh10/NWTCcodes/InflowWind/Source
+   FAST_DIR     = /work/02504/ganesh10/NWTCcodes/FAST/Source
 endif
 
 
