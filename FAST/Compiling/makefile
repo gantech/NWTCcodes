@@ -161,10 +161,10 @@ default:  $(INTER_DIR) $(DEST_DIR)/$(OUTPUT_NAME)$(EXE_EXT)
    # General rules for compliling the files.
 
 %.obj: %.f90
-	$(FC)  $(FFLAGS) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
+	$(FC)  $(FFLAGS) -I$(INCLUDE) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
 
 fftpack.obj: fftpack.f
-	$(F77) $(FFLAGS) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
+	$(F77) $(FFLAGS) -I$(INCLUDE) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
 
    #  Dependency rules.
 ModMesh.obj:             $(PREC).obj

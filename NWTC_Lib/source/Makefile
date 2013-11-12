@@ -18,7 +18,7 @@ OBJ = $(SOURCES:.f90=.o)
 .SUFFIXES : .f90 .o
 
 .f90.o:
-	$(FC) $(FFLAGS) $(INCLUDE) $< -c -o $@
+	$(FC) $(FFLAGS) -I$(INCLUDE) $< -c -o $@
 
 default: libnwtc.a
 
