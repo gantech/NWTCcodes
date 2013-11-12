@@ -1,0 +1,3 @@
+make -f makefileGnu &> logMake_1
+gfortran -x f95-cpp-input -fbacktrace -fno-automatic -O2 -m64 -ffree-line-length-none -I/opt/apps/gcc/4.7.1/include /work/02504/ganesh10/NWTCcodes/NWTC_Lib/source/NWTC_IO.f90 -c -o Obj_lin64/NWTC_IO.obj -J Obj_lin64 &> logMake_2
+make -f makefileGnu &> logMake_3
