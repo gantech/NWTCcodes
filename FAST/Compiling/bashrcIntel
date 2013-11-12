@@ -1,0 +1,6 @@
+module remove intel mvapich2
+module remove gcc 
+module load intel/13.0.2.146
+module load mvapich2
+export PATH=$PATH:/work/02504/ganesh10/NWTCcodes/FAST/bin/intel
+

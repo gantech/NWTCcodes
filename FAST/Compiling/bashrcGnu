@@ -1,0 +1,5 @@
+module remove intel mvapich2
+module remove gcc 
+module load gcc/4.7.1 
+module load mvapich2
+export PATH=$PATH:/work/02504/ganesh10/NWTCcodes/FAST/bin/gnu

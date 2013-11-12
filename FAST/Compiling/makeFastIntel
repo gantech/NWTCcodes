@@ -1,2 +1,3 @@
 make -f makefileIntel &> logMakeIntel
+cp FAST_ilin64 ../bin/intel/FAST
 
