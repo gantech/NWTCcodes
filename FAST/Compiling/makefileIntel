@@ -79,8 +79,8 @@ ifeq ($(OS),Windows_NT)
 else
       # Linux
    DEL_CMD   = rm -f
-   EXE_EXT   = _glin$(BITS)
-   INTER_DIR = Obj_lin$(BITS)
+   EXE_EXT   = _ilin$(BITS)
+   INTER_DIR = Obj_ilin$(BITS)
    MD_CMD    = @mkdir -p
    OBJ_EXT   = .o
    PATH_SEP  = /
