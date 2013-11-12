@@ -38,9 +38,13 @@ endif
 
 
    # Name of compiler to use and flags to use.
-FC      = gfortran
-FFLAGS  = -O2 -m$(BITS) -fbacktrace -finit-local-zero -fno-automatic -ffree-line-length-none
-LDFLAGS = -O2 -m$(BITS) -fbacktrace
+# FC      = gfortran
+# FFLAGS  = -O2 -m$(BITS) -fbacktrace -finit-local-zero -fno-automatic -ffree-line-length-none
+# LDFLAGS = -O2 -m$(BITS) -fbacktrace
+
+FC      = ifort 
+FFLAGS  = -O2 -m$(BITS) -traceback -zero 
+LDFLAGS = -O2 -m$(BITS) -traceback
 
 # other useful gfortran options:
 #  -fdefault-real-8 -fcheck=bounds -std=f2003 -O0 -v
@@ -80,7 +84,7 @@ else
    MD_CMD    = @mkdir -p
    OBJ_EXT   = .o
    PATH_SEP  = /
-   SYS_FILE  = SysGnuLinux
+   SYS_FILE  = SysIntelLinux
 endif
 
 
@@ -161,10 +165,10 @@ default:  $(INTER_DIR) $(DEST_DIR)/$(OUTPUT_NAME)$(EXE_EXT)
    # General rules for compliling the files.
 
 %.obj: %.f90
-	$(FC)  $(FFLAGS) -I$(INCLUDE) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
+	$(FC)  $(FFLAGS) -I/opt/apps/intel/13/composer_xe_2013.2.146/ipp/include -I/opt/apps/intel/13/composer_xe_2013.2.146/mkl/include -c $< -o $(INTER_DIR)/$@ -module $(INTER_DIR)
 
 fftpack.obj: fftpack.f
-	$(F77) $(FFLAGS) -I$(INCLUDE) -c $< -o $(INTER_DIR)/$@ -J $(INTER_DIR)
+	$(F77) $(FFLAGS) -I/opt/apps/intel/13/composer_xe_2013.2.146/ipp/include -I/opt/apps/intel/13/composer_xe_2013.2.146/mkl/include -c $< -o $(INTER_DIR)/$@ -module $(INTER_DIR)
 
    #  Dependency rules.
 ModMesh.obj:             $(PREC).obj

@@ -1,5 +1,6 @@
-FC = gfortran
-FFLAGS = -x f95-cpp-input -ffree-line-length-none
+FC = ifort
+# FFLAGS = -x f95-cpp-input -ffree-line-length-none
+FFLAGS = 
 
 SOURCES_STD =  \
   ModMesh.f90 \
@@ -9,7 +10,7 @@ SOURCES_STD =  \
   NWTC_Num.f90 \
   SingPrec.f90
 
-SOURCES_SYS = SysGnuLinux.f90
+SOURCES_SYS = SysIntelLinux.f90
 
 SOURCES = $(SOURCES_STD) $(SOURCES_SYS)
 
@@ -38,10 +39,10 @@ clean:
 #--- Module-Dependencies
 
 NWTC_Aero.o: NWTC_IO.o NWTC_Num.o
-NWTC_IO.o: SysGnuLinux.o
+NWTC_IO.o: SysIntelLinux.o
 NWTC_Library.o: NWTC_Aero.o ModMesh.o
 NWTC_Num.o: NWTC_IO.o
-SysGnuLinux.o: SingPrec.o
+SysIntelLinux.o: SingPrec.o
 ModMesh.o: SingPrec.o
 
 
